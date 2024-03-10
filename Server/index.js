@@ -5,6 +5,7 @@ dotenv.config()
 
 import TestRoute from './Routers/Test.js'
 import signUpRoute from './Routers/SignUp.js';
+import LoginRouter from './Routers/SingIn.js'
 
 mongoose.connect(process.env.MONGO_URL).then(()=>{
     console.log("mongo Connected");
@@ -22,7 +23,8 @@ app.listen(3000,()=>{
 })
 
 app.use("/api",TestRoute);
-app.use("/api",signUpRoute)
+app.use("/api",signUpRoute);
+app.use("/api",LoginRouter);
 
 // error handle middleware
 app.use((err,req,res,next)=>{
