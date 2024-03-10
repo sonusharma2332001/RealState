@@ -22,7 +22,7 @@ app.listen(3000,()=>{
 })
 
 app.use("/api",TestRoute);
-app.use("/auth",signUpRoute)
+app.use("/api",signUpRoute)
 
 // error handle middleware
 app.use((err,req,res,next)=>{
